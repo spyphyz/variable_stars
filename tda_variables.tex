@@ -25,7 +25,12 @@ See \url{https://www.aavso.org/}
 Broad types:
 Based on observability:
 \begin{itemize}
-\item Intrinsic, e.g. due to pulsation, explosion
+\item Intrinsic:
+    \begin{itemize}
+    \item pulsation instability
+    \item dynamical instability
+    \item explosion
+    \end{itemize}
 \item Extrinsic, e.g. eclipsing binaries
 \end{itemize}
 
@@ -72,14 +77,25 @@ Factors include:
 \item average density
 \item opacity
 \item ionisation
-\item metallicity/Population
+\item metallicity/population
 \item energy production
 \item extinction, reddening or amplification by circumstellar dust
 \item stellar wind and mass loss
 \item non-eclipsing binarity or trinarty (or multarity)
 \end{itemize}
 
-\section{Period-Density Relation}
+\section{Period-Mean Density Relation}
+From Eq. 14.6 Carroll \& Ostlie, period (\(\Pi\)) is given by:
+\begin{equation}
+    \Pi \approx \sqrt{\frac{3 \pi}{2 \gamma G \overline{\rho}}}
+    \propto \overline{\rho}^{-0.5}
+\end{equation}
+
+where the 'adiabatic gamma' is:
+\begin{equation}
+    \gamma \equiv \frac{C_\mathrm{P}}{C_\mathrm{V}}
+\end{equation}
+
 Higher AVERAGE density - shorter period. Density signifies evolutionary point of star too. 
 e.g. LPVs are giant stars with extended envelopes - low average density, so long period.
 
@@ -87,7 +103,14 @@ WDs compact and dense, hence short period.
 
 
 \section{List of Variable Stars and Their Features}
-See Table~\ref{variable_stars}.
+See Fig~\ref{variables_list_table} for a list of characteristics of variables. See Fig~\ref{hrd_variables_diagram} for the position on the HRD.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{variables_list.eps}
+    \caption{Summary of Characteristics of Variable (Pulsating) Stars}   
+    \label{variables_list_table}
+\end{figure}
 
 \begin{figure}[ht]
     \centering
@@ -98,6 +121,7 @@ See Table~\ref{variable_stars}.
 
 
 \section{Amplitude-Period Relationship}
+See Figure~\ref{period_amp_diagram}.
 
 \begin{figure}[ht]
     \centering
@@ -106,23 +130,78 @@ See Table~\ref{variable_stars}.
     \label{period_amp_diagram}
 \end{figure}
 
-\section{Spherical Harmonics}
-xxx
+\section{Radial and Non-Radial Modes, including Spherical Harmonics}
+Standing waves cause radial modes, including the fundamental mode, the overtone (harmonic), the second, etc... Organ-pipe analogy. 
+\(\delta\) Cepheids and W Virginis stars pulsate in fundamental modes; RR Lyrae in fundamental or first harmonic (or both at same time).  
+These sound waves are powered the star as a thermodynamic 'heat engine' (proposed by Eddington). 
 
-\section{One-Zone Model}
-xxx
+There are driving forces and damping forces. When damping forces prevail, no pulsation is seen. When driving forces exceed damping forces, pulsation starts. An equilibrium is reached when driving forces cannot exceed damping forces any more. 
+
+Non-radial pulsations follow spherical harmonics, described by the following mathematics:
+\begin{equation}
+    Y^l_m (\theta, \phi) = 
+\end{equation}
 
 \section{Thermodynamics}
-\subsection{The '\(\kappa\) Mechanism'}
-Radiation flux - opacity (\(\kappa\)) increases with temperature due to partial ionisation (e.g. He\(^+\) to He\(^{++}\) in RR Lyrae and Cepheids), trapping EM radiation/heat, favouring pulsation. 
+Work done as the gases pulsate is \(P \,dV\). 
+Net positive work for the cycle drives oscillations, i.e.
+\begin{equation}
+    \oint P \,dV > 0
+\end{equation}
+A cycle will do work if it receives heat when it is in its compressed portion of the cycle, and gives off heat when it is in its expanded portion.
+A Carnot cycle, showing hysteresis in P-V parameter space.
 
-\subsection{The '\(\epsilon\) Mechanism'}
+What mechanisms can add heat in this compressed phase, and then only in narrow strips on the HRD?
+
+\subsection{The Nuclear '\(\epsilon\) Mechanism'}
 \begin{equation}
 \epsilon \propto T^\nu
 \end{equation}
+Compression at centre of star increases energy generation (due to increased temperature and density). However may not contribute to pulsation as the pulsation amplitude of the node at the centre is small. Also, don't see many pulsating stars on the MS of the HRD.
+
+\subsection{The '\(\kappa\) Mechanism' ("Eddington's Valve)}
+Usualy Kramer's Law (due to bound electrons in metals) is obeyed:
+\begin{equation}
+    \kappa \propto \rho T^{-3.5}
+\end{equation}
+where compression increases temperature far more than density, and radiative opacity decreases, because electrons are stripped from metals. 
+
+Under special circumstances, this relationship changes. (\(\kappa\)) can increase with temperature due to partial ionisation (e.g. He\(^+\) [He II] to He\(^{++}\) [He III] in RR Lyrae and Cepheids), trapping EM radiation/heat, favouring pulsation.  
+
+With the abundance of H and He, during partial re-ionisation of H and He a heat sink occurs where temperature remains fairly constant. This allows recombination of metals and electrons as density increases (but not temperature), increasing opacity. 
+
+H and He II partial ionisation zones exist, at \(1 \times 10^4\)K and \(4 \times 10^4\) K respectively. In stars hotter than F-class, the ionisation zones coincide with convective zones, so NO radiative opacity. In cooler stars, the partial ionisation zones are too deep to make much impact at the surface. Hence the narrow instability strip where RR Lyra.
+
+See Figure~\ref{ionisation_temp_diagram} for a diagram of partial reionisation areas in a star as a function of effective temperature. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{ionisation_temp.eps}
+    \caption{Partial Re-ionisation Depths Depending on Stellar Effective Temperature} 
+    \label{ionisation_temp_diagram}
+\end{figure}
+
+In the pulsating B stars (e.g. \(beta\) Cepheids), there is an 'iron opacity bump' mechanism - Fe increases opacity at \(1-2 \times 10^5\) K. 
 
 \subsection{The '\(\gamma\) Mechanism'}
-Akin to a phase transition (like ice to liquid water). Energy goes in, but temperature doesn't go up (as much as would be expected). 
+Amplifies the \(kappa\)-mechanism. Akin to a phase transition (like ice to liquid water). Energy goes in, but temperature doesn't go up (as much as would be expected). Part of the work done causes further ionisation (increasing specific heats - Cv and Cp), rather than increasing temp.
+
+\section{One-Zone Model}
+The one-zone (Zhevakin's) model is shown in Figure~\ref{one_zone_model_diagram}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.2\textwidth]{one_zone_model.eps}
+    \caption{The One-Zone Model} 
+    \label{one_zone_model_diagram}
+\end{figure}
+
+N2L equation of \textit{radial} motion:
+\begin{equation}
+    \rho \frac{d^2r}{dt^2} = -G \frac{M_r \rho}{r^2} - \frac{dP}{dr}
+\end{equation}
+
+
 
 \section{The Finite Fourier Transform}
 \begin{equation}
