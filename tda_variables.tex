@@ -98,7 +98,7 @@ See Fig~\ref{variables_list_table} for a list of characteristics of variables. S
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{hrd_variables.eps}
+    \includegraphics[width=0.4\textwidth]{hrd_variables.eps}
     \caption{Variables on the HRD. From \citet{MiraVariablesPeriod}}
     \label{hrd_variables_diagram}
 \end{figure}
@@ -115,12 +115,24 @@ where the 'adiabatic gamma' is:
     \gamma \equiv \frac{C_\mathrm{P}}{C_\mathrm{V}}
 \end{equation}
 
-Higher AVERAGE density - shorter period. Density signifies evolutionary point of star too. 
-e.g. LPVs are giant stars with extended envelopes - low average density, so long period.
+Higher AVERAGE density - shorter period. LPVs are giant stars with extended envelopes - low average density, so long period (years). WDs are compact and dense, hence  very short period (minutes). 
 
-WDs compact and dense, hence short period. 
+Density also informs us about evolutionary stage of star. 
 
-Density informs us about evolutionary stage of star. 
+\subsection{Pulsation constant (Q)}
+August Ritter (in 1879) established adiabatic radial pulsation period for a homogenous sphere:
+\begin{equation}
+    \Pi = k \sqrt{\frac{R}{g}}
+\end{equation}
+As
+\begin{equation}
+    g = \frac{GM}{R^2} = GR\frac {M}{R^3} = GR\rho
+\end{equation}
+we get:
+\begin{equation}
+    Q = \Pi \sqrt{\left(\frac{\overline{\rho}}{\overline{\rho}_\odot}\right)} \equiv \Pi \; \overline{\rho}^{\;0.5}
+    \label{pulsation_constant}
+\end{equation}
 
 
 
@@ -163,18 +175,18 @@ The one-zone (Zhevakin's) model is shown in Figure~\ref{one_zone_model_diagram} 
 
 N2L equation of \textit{radial} motion:
 \begin{equation}
-    \rho \frac{d^2r}{dt^2} = -G \frac{M_r \rho}{r^2} - \frac{dP}{dr}
+    \rho \frac{d^2R}{dt^2} = -G \frac{M_r \rho}{r^2} - \frac{dP}{dR}
 \end{equation}
 
 N2L equation of motion for the forces on the shell, in hydrostatic equilibrium, of this model star are:
 \begin{equation}
-    m\frac{dv}{dt} \equiv m\frac{d^2r}{dt^2}= F_\mathrm{pressure} - F_\mathrm{gravity} 
-    = 4 \pi r^2 P - \frac{GMm}{r^2}
+    m\frac{dv}{dt} \equiv m\frac{d^2R}{dt^2}= F_\mathrm{pressure} - F_\mathrm{gravity} 
+    = 4 \pi R^2 P - \frac{GMm}{R^2}
     \label{N2L_sphere}
 \end{equation}
 with
 \begin{equation}
-    v = \frac{dr}{dt}
+    v = \frac{dR}{dt}
     \label{vdrdt}
 \end{equation}
 
@@ -188,23 +200,23 @@ Assume expansion-contraction is adiabatic (no heat transfer):
 
 
 \subsection{Linearised Solution for the One-Zone Model}
-Equilibrium configuration: \(r_\mathrm{0}\) and \(P_\mathrm{0}\).  EoM (Eq.\ref{N2L_sphere}) assumes sum of all forces are zero in equilibrium (i.e. no acceleration), so get: 
+Equilibrium configuration: \(R_\mathrm{0}\) and \(P_\mathrm{0}\).  EoM (Eq.\ref{N2L_sphere}) assumes sum of all forces are zero in equilibrium (i.e. no acceleration), so get: 
 \begin{equation}
-     \frac{GMm}{r^2_\mathrm{0}} = 4\pi r^2_\mathrm{0} P_\mathrm{0}
+     \frac{GMm}{R^2_\mathrm{0}} = 4\pi R^2_\mathrm{0} P_\mathrm{0}
      \label{star_equilibrium}
 \end{equation}
 
 Introduce very small perturbations into EoM (Eq.\ref{N2L_sphere}): \(\Delta R\) and \(\Delta P\): 
 \begin{equation}
-      m\frac{d^2(r_\mathrm{0} + \Delta r)}{dt^2} = 4 \pi (r_\mathrm{0} + \Delta r)^2 (P_\mathrm{0} + \Delta P) - \frac{GMm}{(r_\mathrm{0} + \Delta r)^2}
+      m\frac{d^2(R_\mathrm{0} + \Delta R)}{dt^2} = 4 \pi (R_\mathrm{0} + \Delta R)^2 (P_\mathrm{0} + \Delta P) - \frac{GMm}{(R_\mathrm{0} + \Delta R)^2}
 \end{equation}
 Taylor expansion, first order term:
 \begin{equation}
-      \frac{1}{(r_\mathrm{0} + \Delta r)^2} \approx \frac{1}{r_\mathrm{0}^2}(1 - 2 \frac{\Delta r}{r_\mathrm{0}})
+      \frac{1}{(R_\mathrm{0} + \Delta R)^2} \approx \frac{1}{R_\mathrm{0}^2}(1 - 2 \frac{\Delta R}{R_\mathrm{0}})
 \end{equation}
 Next use equilibrium equation (Eq.\ref{star_equilibrium}) and the fact that at the equilibrium radius acceleration is zero \(\frac{d^2R_\mathrm{0}}{dt^2} = 0\), and we get the differential equation:
 \begin{equation}
-      m\frac{d^2(\Delta r)}{dt^2} = \frac{2GMm}{R^3_\mathrm{0}}\Delta r + 8\pi r_\mathrm{0} P_\mathrm{0} \Delta r + 4\pi R^2_\mathrm{0} \Delta P
+      m\frac{d^2(\Delta R)}{dt^2} = \frac{2GMm}{R^3_\mathrm{0}}\Delta R + 8\pi r_\mathrm{0} P_\mathrm{0} \Delta R + 4\pi R^2_\mathrm{0} \Delta P
       \label{differential}
 \end{equation}
 Assuming that the pulsation is adiabatic (no heat transfer), and linearising the adiabatic relation \(PV^\gamma = K\) (a constant), we can link the perturbation in pressure to the perturbation in radius:
@@ -252,20 +264,20 @@ and
 
 Rewriting Eq.(\ref{N2L_sphere}), Eq.(\ref{vdrdt}) and Eq.(\ref{adiabatic})we get:
 \begin{equation}
-     v_\mathrm{f} = v_\mathrm{i} + \left(\frac{4\pi r^2_\mathrm{i} P_\mathrm{i}}{m} - \frac{GM}{r^2_\mathrm{i}}\right) \Delta t
+     v_\mathrm{f} = v_\mathrm{i} + \left(\frac{4\pi R^2_\mathrm{i} P_\mathrm{i}}{m} - \frac{GM}{R^2_\mathrm{i}}\right) \Delta t
 \end{equation}
 and
 \begin{equation}
-     r_\mathrm{f} = r_\mathrm{i} + v_\mathrm{f} \Delta t
+     R_\mathrm{f} = R_\mathrm{i} + v_\mathrm{f} \Delta t
 \end{equation}
-and (using \(V = \frac{4}{3} \pi r^3\)):
+and (using \(V = \frac{4}{3} \pi R^3\)):
 \begin{equation}
-     P_\mathrm{f} = P_\mathrm{i} \left(\frac{r_\mathrm{i}}{r_\mathrm{f}} \right)^3
+     P_\mathrm{f} = P_\mathrm{i} \left(\frac{R_\mathrm{i}}{R_\mathrm{f}} \right)^3
 \end{equation}
 
 
-\section{More Thermodynamics and the Non-Adiabatic Model}
-Adiabatic model valid if \(t_\mathrm{KH}>>\Pi\). Non-adiabatic effects non-negligible in pulsatile zones. 
+\section{Thermodynamics and the Non-Adiabatic Model}
+Adiabatic model valid if \(t_\mathrm{KH}>>\Pi\). Non-adiabatic effects are non-negligible in pulsatile zones. 
 
 \subsection{Heat \& Work}
 Transfer of heat:
@@ -273,7 +285,7 @@ Transfer of heat:
     \pdv{L_\mathrm{r}}{M_\mathrm{r}} = \epsilon_\mathrm{nuc} + \epsilon_\mathrm{grav}
 \end{equation}
 
-First consider an \textit{almost} adiabatic pulsation of a star that returns to \textit{almost} the same state after one cycle. Heat (\(dQ\)) added to each shell of mass \(\Delta M\) which is having work (\(dW\)) done to it. The change in internal energy (\(dE\)) is:
+First consider an \textit{almost} adiabatic pulsation of a star that returns to \textit{almost} the same state after one cycle. Heat (\(dQ\)) is added to each shell of mass \(\Delta M\) which is having work (\(dW\)) done to it. The change in internal energy (\(dE\)) is:
 \begin{equation}
      dE = dQ - dW
 \end{equation}
@@ -286,7 +298,7 @@ Over a complete single cycle of pulsation:
     \oint dQ = \oint dE + \oint dW
 \end{equation}
 
-If start returns to initial state after the cycle of pulsation, the \(\oint dE = 0\), hence:
+If star returns to initial state after the cycle of pulsation, the \(\oint dE = 0\), hence:
 \begin{equation}
     W = \oint dQ
     \label{work}
@@ -335,13 +347,6 @@ Another way of looking at it - work done as the gases pulsate is \(P \,dV\). Net
 \end{equation}
 A cycle will do work if it receives heat when it is in its compressed portion of the cycle, and gives off heat when it is in its expanded portion.
 
- 
-
-In partial ionisation (e.g. He+ to He++ in \(\delta\)-Cepheids and RR Lyrae) regions, \(\kappa\) doesn't decrease so quickly, or even increases, with temperature.
-
-What mechanisms can add heat in this compressed phase, and then only in narrow strips on the HRD?
-
-
 
 \subsection{The \(\kappa\)-Mechanism ("Eddington's Valve")}
 Usualy Kramer's Law (due to bound electrons in metals) is obeyed:
@@ -356,9 +361,7 @@ With the abundance of H and He, during partial re-ionisation of H and He a heat 
 
 In other words, \(dQ\) rises as well as \(\delta T\); thus the work integral is \(>0\) and pulsation can occur.
 
-H and He II partial ionisation zones exist, at \(1 \times 10^4\)K and \(4 \times 10^4\) K respectively. In stars hotter than F-class, the ionisation zones coincide with convective zones, so NO radiative opacity. In cooler stars, the partial ionisation zones are too deep to make much impact at the surface. Hence the narrow instability strip where RR Lyra.
-
-See Figure~\ref{ionisation_temp_diagram} for a diagram of partial reionisation areas in a star as a function of effective temperature. 
+H and He II partial ionisation zones exist, at \(1 \times 10^4\)K and \(4 \times 10^4\) K respectively. In stars hotter than F-class, the ionisation zones coincide with convective zones, so NO radiative opacity. In cooler stars, the partial ionisation zones are too deep to make much impact at the surface. Hence the narrow instability strip where RR Lyra reside. See Figure~\ref{ionisation_temp_diagram} for a diagram of partial reionisation areas in a star as a function of effective temperature. 
 
 \begin{figure}[h]
     \centering
@@ -367,10 +370,10 @@ See Figure~\ref{ionisation_temp_diagram} for a diagram of partial reionisation a
     \label{ionisation_temp_diagram}
 \end{figure}
 
-In the pulsating B stars (e.g. \(\beta\) Cepheids), there is an 'iron opacity bump' mechanism - Fe increases opacity at \(\approx 10^5\) K. 
+In the pulsating B stars (e.g. \(\beta\)-Cepheids), there is an 'iron opacity bump' mechanism - Fe increases opacity at \(\approx 10^5\) K. 
 
 \subsection{The \(\gamma\)-Mechanism}
-Amplifies the \(\kappa\)-mechanism. Akin to a phase transition (like ice to liquid water). Energy goes in, but temperature doesn't go up (as much as would be expected). Part of the work done causes further ionisation (increasing specific heats - \(C_V\) and \(C_P\)), rather than increasing temperature. Ionisation regions tend to be cooler than surroundings, so heat flows into the ionisation region - this adds to \(W_\mathrm{TOT}\) as both \(\delta T > 0\) and \(dQ > 0\)
+Amplifies the \(\kappa\)-mechanism. Akin to a phase transition (like ice to liquid water). Energy goes in, but temperature doesn't go up (as much as would be expected). Part of the work done causes further ionisation (increasing specific heats - \(C_V\) and \(C_P\)), rather than increasing temperature. Ionisation regions tend to be cooler than surroundings, so heat flows into the ionisation region - this adds a positive contribution to the work integral \(W_\mathrm{TOT}\), as both \(\delta T > 0\) and \(dQ > 0\).
 
 \subsection{The Nuclear \(\epsilon\)-Mechanism}
 \begin{equation}
@@ -382,22 +385,61 @@ Compression at centre of star increases energy generation (i.e. heat) as T rises
 
 \section{The Finite Fourier Transform}
 \begin{equation}
-F_\mathrm{T}(\nu) = \int_{-T/2}^{T/2} f(t)e^{-i 2\pi \nu t} \,dt
+F_\mathrm{T}(\nu) = \int_{-T/2}^{T/2} f(t) \;  e^{-i 2\pi \nu t} \,dt
+\end{equation}
+where \(f(t)\) is the data, e.g. magnitude as a function of time. 
+
+\section{Period Relations}
+
+\subsection{Period-Luminosity-Colour (PLC) Relation}
+Rewrite \(L = 4\piR^2 \; \sigma_\mathrm{B} T^4_\mathrm{eff}\) in terms of magnitudes (take logs of both sides, and multiply by -2.5, to give):
+\begin{equation}
+    M = a\log_\mathrm{10}(R) + b\log_\mathrm{10}(T_\mathrm{eff}) + c
+\end{equation}
+Can express \(T_\mathrm{eff}\) as a colour index, e.g. \(V-K\). Thus:
+\begin{equation}
+    M = a\log_\mathrm{10}(R) + b'(V - K) + c
+\end{equation}
+Next, we use a relation between period (\(\Pi\)), mass (\(\mathcal{M}\)) and radius (R), by rearranging the equation for the pulsation constant (Eq.\ref{pulsation_constant}):
+\begin{equation}
+    R^{3/2} = \Pi \; \mathcal{M}^{1/2} Q^{-1}
+\end{equation}
+So
+\begin{equation}
+    M = a\log_\mathrm{10}(\Pi^{2/3} \mathcal{M}^{1/3} Q^{-2/3}) + b'(V - K) + c
+\end{equation}
+As \(L \propto \mathcal{M}^\alpha \), we get:
+\begin{equation}
+    M = a'\log_\mathrm{10}(\Pi) + d\log_\mathrm{10}(L^{1/3\alpha}) + b'(V - K) + c'
+\end{equation}
+Thus
+\begin{equation}
+    M = a'\log_\mathrm{10}(\Pi) + d'\log_\mathrm{10}(L) + b'(V - K) + c"
+\end{equation}
+As \(M = -2.5 \log_\mathrm{10}(L)\), we get:
+\begin{equation}
+    M = A \log_\mathrm{10}(\Pi) + B (V - K) + C
+    \label{plc_relation}
 \end{equation}
 
-\section{Period-Luminosity (P-L) Relation - the Leavitt Law}
+
+\subsection{Period-Luminosity (PL) Relation - the Leavitt Law}
+PLC requires 2 filters - more observationally "expensive". PL requires only one-filter photometric measurement; at the expense of slightly increased dispersion in \(M\). 
+
+For Cepheids, located in the narrow instability strip, there is a narrow range in \(T_\mathrm{eff}\) for a given period. So get rid of the colour index term \(B(V-K)\) in Eq.\ref{plc_relation}. 
+
+
+
+\subsection{Calibration of the Cepheid PL Relation}
 
 Published by Henrietta Leavitt in 1912 \citep{leavittPeriods25Variable1912}. Figure~\ref{leavitt_period_luminosity_diagram} shows the original figure from the 1912 paper, with log period vs apparent magnitude for the 25 SMC Cepheids.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.6\textwidth]{leavitt_period_luminosity.eps}
+    \includegraphics[width=0.2\textwidth]{leavitt_period_luminosity.eps}
     \caption{Log-Period vs Apparent Magnitudes (and their amplitude of change) for 25 Cepheids in the SMC. From \citet{leavittPeriods25Variable1912}}    \label{leavitt_period_luminosity_diagram}
 \end{figure}
 
-\subsection{Period-Luminosity-Colour (PLC) Relation}
-
-\subsection{Calibration of the Cepheid PL Relation}
 Methods
 \begin{itemize}
     \item Direct parallax
@@ -410,7 +452,7 @@ Methods
     \item Baade-Wesselink method
 \end{itemize}
 
-\citet{fouqueNewCalibrationGalactic2007} compared V-band and K-band measurements - K-band was brighter and tighter (Figure~\ref{fouque_cepheid})
+For calibrating the PL relation, \citet{fouqueNewCalibrationGalactic2007} compared V-band and K-band measurements - K-band was brighter and tighter (Figure~\ref{fouque_cepheid})
 
 \begin{figure}[ht]
     \centering
@@ -421,11 +463,15 @@ Methods
 
 The distance modulus:
 \begin{equation}
-\mu \equiv m-M = 5\log_\mathrm{10}(d) - 5
+    \mu \equiv m-M = 5\log_\mathrm{10}(d) - 5
 \end{equation}
 
-Cepheids, primary distance indicators, are exceedingly bright YSGs. Ground-based telescopes can see them a few Mpc away; HST up to 20 Mpc. 
+Cepheids, primary distance indicators (first rung of the extra-galactic distance scale), are exceedingly bright YSGs. Ground-based telescopes can see them a few Mpc away; HST up to 20 Mpc. 
 
+RR Lyrae have a near-constant brightness in the V-band, regardless of period, ie. PL relation slope is horizontal = 0; there is however a definite PL relation in the K-band (depending slightly on [Fe/H]). Foe example for RR Lyrae in the globular cluster M 5:
+\begin{equation}
+    <K>=-2.33\log_\mathrm{10}(P)-1.14
+\end{equation}
 LPVs are a complex zoo of variables - PL relations are varied. 
 
 \section{Baade-Wesselink(-Becker) Method}
@@ -461,9 +507,32 @@ Thus:
 \label{baade_2}
 \end{equation}
 Combine Eq.(\ref{baade_1}) and Eq.(\ref{baade_2}) to give 2 equations with 2 unknowns, and can then solve for \(R_\mathrm{1}\) and \(R_\mathrm{2}\).
-Repeat multiple times over whole pulsation cycle, to get average radius.
-Nowadays interferometry can be used to measure radius. 
+Repeat multiple times over whole pulsation cycle, to get average radius (Laney and Stobey, 1995).
 
+]Nowadays interferometry can be used to measure radius. 
+
+\section{Cepheids}
+Types:
+\begin{itemize}
+    \item \(\delta\)
+    \item \(\beta\)
+    \item anomalous
+    \item Population II (low mass, \(< M_\odot\))
+\end{itemize}
+    
+\section{LPVs}
+Soszynski, Wood and Udalski, 2013 article
+
+
+\section{Other Uses of Variable Stars}
+\begin{itemize}
+    \item galactic:
+       \begin{itemize}
+        \item RR Lyrae - density profile in Milky Way spheroidal halo
+        \item RR Lyrae or Miras - distance to centre of Milky Way (e.g. Catchpole et al 2015)
+       \end{itemize}
+    \item extra-galactic:
+\end{itemize}
 
 \bibliographystyle{mnras}
 \bibliography{variables_bibliography}
