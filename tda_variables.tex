@@ -147,49 +147,6 @@ Non-radial pulsations follow spherical harmonics, described by the following mat
 \end{equation}
 ... depending on \(l\) and \(m\). 
 
-\section{Thermodynamics}
-Work done as the gases pulsate is \(P \,dV\). 
-Net positive work for the cycle drives oscillations, i.e.
-\begin{equation}
-    \oint P \,dV > 0
-\end{equation}
-A cycle will do work if it receives heat when it is in its compressed portion of the cycle, and gives off heat when it is in its expanded portion.
-A Carnot cycle, showing hysteresis in P-V parameter space.
-
-What mechanisms can add heat in this compressed phase, and then only in narrow strips on the HRD?
-
-\subsection{The Nuclear \(\epsilon\)-Mechanism}
-\begin{equation}
-\epsilon \propto T^\nu
-\end{equation}
-Compression at centre of star increases energy generation (due to increased temperature and density). However may not contribute to pulsation as the pulsation amplitude of the node at the centre is small. Also, don't see many pulsating stars on the MS of the HRD.
-
-\subsection{The \(\kappa\)-Mechanism ("Eddington's Valve")}
-Usualy Kramer's Law (due to bound electrons in metals) is obeyed:
-\begin{equation}
-    \kappa \propto \rho T^{-3.5}
-\end{equation}
-where compression increases temperature far more than density, and radiative opacity decreases, because electrons are stripped from metals. 
-
-Under special circumstances, this relationship changes. (\(\kappa\)) can increase with temperature due to partial ionisation (e.g. He\(^+\) [He II] to He\(^{++}\) [He III] in RR Lyrae and Cepheids), trapping EM radiation/heat, favouring pulsation.  
-
-With the abundance of H and He, during partial re-ionisation of H and He a heat sink occurs where temperature remains fairly constant. This allows recombination of metals and electrons as density increases (but not temperature), increasing opacity. 
-
-H and He II partial ionisation zones exist, at \(1 \times 10^4\)K and \(4 \times 10^4\) K respectively. In stars hotter than F-class, the ionisation zones coincide with convective zones, so NO radiative opacity. In cooler stars, the partial ionisation zones are too deep to make much impact at the surface. Hence the narrow instability strip where RR Lyra.
-
-See Figure~\ref{ionisation_temp_diagram} for a diagram of partial reionisation areas in a star as a function of effective temperature. 
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.4\textwidth]{ionisation_temp.eps}
-    \caption{Partial Re-ionisation Depths Depending on Stellar Effective Temperature} 
-    \label{ionisation_temp_diagram}
-\end{figure}
-
-In the pulsating B stars (e.g. \(beta\) Cepheids), there is an 'iron opacity bump' mechanism - Fe increases opacity at \(1-2 \times 10^5\) K. 
-
-\subsection{The \(\gamma\)-Mechanism}
-Amplifies the \(kappa\)-mechanism. Akin to a phase transition (like ice to liquid water). Energy goes in, but temperature doesn't go up (as much as would be expected). Part of the work done causes further ionisation (increasing specific heats - \(C_V\) and \(C_P\)), rather than increasing temperature.
 
 \section{One-Zone Model}
 Combines: Newtonian mechanics, gravitation, thermodynamics, simple harmonic motion.
@@ -221,7 +178,7 @@ with
     \label{vdrdt}
 \end{equation}
 
-Assume expansion-contraction is adiabatic:
+Assume expansion-contraction is adiabatic (no heat transfer):
 \begin{equation}
     P_\mathrm{i} V_\mathrm{i}^\gamma = P_\mathrm{f} V_\mathrm{f}^\gamma
     \label{adiabatic}
@@ -250,7 +207,7 @@ Next use equilibrium equation (Eq.\ref{star_equilibrium}) and the fact that at t
       m\frac{d^2(\Delta r)}{dt^2} = \frac{2GMm}{R^3_\mathrm{0}}\Delta r + 8\pi r_\mathrm{0} P_\mathrm{0} \Delta r + 4\pi R^2_\mathrm{0} \Delta P
       \label{differential}
 \end{equation}
-Assuming that the pulsation is adiabatic, and linearising the adiabatic relation \(PV^\gamma = K\) (a constant), we can link the perturbation in pressure to the perturbation in radius:
+Assuming that the pulsation is adiabatic (no heat transfer), and linearising the adiabatic relation \(PV^\gamma = K\) (a constant), we can link the perturbation in pressure to the perturbation in radius:
 \begin{equation}
       \frac{\Delta P }{P_\mathrm{0}} = -3 \gamma \frac{\Delta R}{R_\mathrm{0}}
       \label{linearised_adiabatic}
@@ -305,6 +262,122 @@ and (using \(V = \frac{4}{3} \pi r^3\)):
 \begin{equation}
      P_\mathrm{f} = P_\mathrm{i} \left(\frac{r_\mathrm{i}}{r_\mathrm{f}} \right)^3
 \end{equation}
+
+
+\section{More Thermodynamics and the Non-Adiabatic Model}
+Adiabatic model valid if \(t_\mathrm{KH}>>\Pi\). Non-adiabatic effects non-negligible in pulsatile zones. 
+
+\subsection{Heat \& Work}
+Transfer of heat:
+\begin{equation}
+    \pdv{L_\mathrm{r}}{M_\mathrm{r}} = \epsilon_\mathrm{nuc} + \epsilon_\mathrm{grav}
+\end{equation}
+
+First consider an \textit{almost} adiabatic pulsation of a star that returns to \textit{almost} the same state after one cycle. Heat (\(dQ\)) added to each shell of mass \(\Delta M\) which is having work (\(dW\)) done to it. The change in internal energy (\(dE\)) is:
+\begin{equation}
+     dE = dQ - dW
+\end{equation}
+Thus
+\begin{equation}
+     dQ = dE + dW
+\end{equation}
+Over a complete single cycle of pulsation:
+\begin{equation}
+    \oint dQ = \oint dE + \oint dW
+\end{equation}
+
+If start returns to initial state after the cycle of pulsation, the \(\oint dE = 0\), hence:
+\begin{equation}
+    W = \oint dQ
+    \label{work}
+\end{equation}
+
+\(dQ\) is related entropy...
+
+
+\subsection{Entropy \& Work}
+Change in entropy:
+\begin{equation}
+    dS = \frac{dQ}{T}
+\end{equation}
+Let
+\begin{equation}
+    T = T_\mathrm{0} + \delta T
+\end{equation}
+Then, to first order (taking a Taylor expansion of \(1/T\)):
+\begin{equation}
+    dS = \frac{dQ}{T} \approx \frac{dQ}{T_\mathrm{0}} - \frac{\delta T}{T^2_\mathrm{0}} dQ
+\end{equation}
+For a reversible cycle, \(\oint dS = 0\), thus:
+\begin{equation}
+    \oint \frac{dQ}{T} = \oint \frac{dQ}{T_\mathrm{0}} - \oint \frac{\delta T}{T^2_\mathrm{0}} dQ
+\end{equation}
+
+Taking \(T_\mathrm{0}\) out of the integral sign and substituting the expression for the work (Eq.\ref{work}), we get, for a single shell over the whole cycle:
+\begin{equation}
+    W = \oint \frac{\delta T}{T_\mathrm{0}} dQ
+    \label{work_2}
+\end{equation}
+
+Now integrate Eq.\ref{work_2} over all the shells to get total mechanical work done on the star:
+\begin{equation}
+    W_\mathrm{TOT} = \int_\mathrm{M} \oint \frac{\delta T}{T_\mathrm{0}} dQ \; dM_\mathrm{r}
+\end{equation}
+
+Pulsation occurs if \(W_\mathrm{TOT} > 0\). This only happens when \(\delta T \) and \(dQ\) have the same sign - i.e. heat is added to the shell when T rises, and heat is lost by the shell when T falls. 
+
+
+Where Kramer's law (\(\kappa \propto \rho T^{-3.5}\)) holds, as T rises (\(\delta T > 0\)), the \(\kappa\) decreases, letting heat leak out (\(dQ<0\)). Thus the work integral is \(<0\) and the star is stable \textbf{against} pulsation. 
+
+Another way of looking at it - work done as the gases pulsate is \(P \,dV\). Net positive work for the cycle drives oscillations, i.e.
+\begin{equation}
+    \oint P \,dV > 0
+\end{equation}
+A cycle will do work if it receives heat when it is in its compressed portion of the cycle, and gives off heat when it is in its expanded portion.
+
+ 
+
+In partial ionisation (e.g. He+ to He++ in \(\delta\)-Cepheids and RR Lyrae) regions, \(\kappa\) doesn't decrease so quickly, or even increases, with temperature.
+
+What mechanisms can add heat in this compressed phase, and then only in narrow strips on the HRD?
+
+
+
+\subsection{The \(\kappa\)-Mechanism ("Eddington's Valve")}
+Usualy Kramer's Law (due to bound electrons in metals) is obeyed:
+\begin{equation}
+    \kappa \propto \rho T^{-3.5}
+\end{equation}
+where compression increases temperature far more than density, and radiative opacity decreases, because electrons are stripped from metals. 
+
+Under special circumstances, this relationship changes. (\(\kappa\)) can increase with temperature due to partial ionisation (e.g. He\(^+\) [He II] to He\(^{++}\) [He III] in RR Lyrae and Cepheids), trapping EM radiation/heat, favouring pulsation.  
+
+With the abundance of H and He, during partial re-ionisation of H and He a heat sink occurs where temperature remains fairly constant. This allows recombination of metals and electrons as density increases (but not temperature), increasing opacity. 
+
+In other words, \(dQ\) rises as well as \(\delta T\); thus the work integral is \(>0\) and pulsation can occur.
+
+H and He II partial ionisation zones exist, at \(1 \times 10^4\)K and \(4 \times 10^4\) K respectively. In stars hotter than F-class, the ionisation zones coincide with convective zones, so NO radiative opacity. In cooler stars, the partial ionisation zones are too deep to make much impact at the surface. Hence the narrow instability strip where RR Lyra.
+
+See Figure~\ref{ionisation_temp_diagram} for a diagram of partial reionisation areas in a star as a function of effective temperature. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{ionisation_temp.eps}
+    \caption{Partial Re-ionisation Depths Depending on Stellar Effective Temperature} 
+    \label{ionisation_temp_diagram}
+\end{figure}
+
+In the pulsating B stars (e.g. \(\beta\) Cepheids), there is an 'iron opacity bump' mechanism - Fe increases opacity at \(\approx 10^5\) K. 
+
+\subsection{The \(\gamma\)-Mechanism}
+Amplifies the \(\kappa\)-mechanism. Akin to a phase transition (like ice to liquid water). Energy goes in, but temperature doesn't go up (as much as would be expected). Part of the work done causes further ionisation (increasing specific heats - \(C_V\) and \(C_P\)), rather than increasing temperature. Ionisation regions tend to be cooler than surroundings, so heat flows into the ionisation region - this adds to \(W_\mathrm{TOT}\) as both \(\delta T > 0\) and \(dQ > 0\)
+
+\subsection{The Nuclear \(\epsilon\)-Mechanism}
+\begin{equation}
+\epsilon \propto T^\nu
+\end{equation}
+Compression at centre of star increases energy generation (i.e. heat) as T rises. This also favours \(W_\mathrm{TOT}\), and in theory pulsation. However may not contribute that much to pulsation as the pulsation amplitude of the node at the centre of the star is small. Also, don't see many pulsating stars on the MS of the HRD.
+
 
 
 \section{The Finite Fourier Transform}

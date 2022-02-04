@@ -4,7 +4,7 @@
 \LoadClass[11pt,a4paper]{exam} 
 
 %load in some commonly needed packages 
-\RequirePackage{ifthen,amsmath,amssymb,amsthm,bm,color,natbib,graphicx}
+\RequirePackage{ifthen,amsmath,amssymb,amsthm,bm,color,natbib,graphicx,derivative}
 \RequirePackage[colorlinks=true, allcolors=blue]{hyperref}
 \RequirePackage[english]{babel}
 
